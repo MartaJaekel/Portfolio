@@ -1,0 +1,22 @@
+---
+
+---
+
+<footer>
+    <small>Copyright &copy; <span id="copyright"></span> |All rights reserved </small>
+</footer>
+
+<style>
+    footer {
+        background-color: #333;
+        color: #e0dfb7;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+<script>
+    document.querySelector('#copyright').textContent = new Date().getFullYear().toString();
+</script>
