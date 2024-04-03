@@ -1,0 +1,88 @@
+---
+const projects = [
+    { title: "PLantBuddy", description: "Your go-to guide for all things plant-related", image: "/images/plantbuddy.png"},
+    {title : "Bowen Massage", description: "A website for a massage therapist", image: "/images/bowen.png"},
+    {title : "Astrology App", description: "An astrology app that gives you your daily horoscope ", image: "/images/horoscope.png"},
+    
+]
+
+---
+
+<div>
+    <h1>Projects</h1>
+    <div class="project-container" >
+        
+        {projects.map(project => (
+            <figure class="card-project">
+                
+                    
+                        <img src={project.image} alt={project.title} width="200"  height="200"/>
+                <h2>{project.title}</h2>
+                <figcaption>{project.description}</figcaption>
+                
+                
+                
+               
+            </figure>
+        ))}
+    </div>
+    </div>
+
+<style>
+    div {
+        background-color: rgb(220, 203, 198);
+        padding: 20px;
+    }
+    h1 {   
+        text-align: center;
+        font-size: 2rem;
+        
+        padding: 50px;
+        
+       
+       
+     }
+
+    .project-container {
+    display: flex;
+    justify-content: space-around;
+    
+    
+}
+.card-project figcaption {
+      text-align: center;
+      
+
+    padding: 10px;
+    max-width: 200px;
+    font-style: normal;
+
+    }
+    ul {
+        list-style-type: none;
+        gap: 20px;
+    }
+    .card-project {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      border-radius: 10px;
+        border: 0.5px solid black;
+        background-color: white;
+        
+    
+    }
+    .card-project h2 {
+        
+        padding: 10px;
+        font-size: 1.2rem;
+    }
+
+    
+    img {
+        width:300px;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+</style>
