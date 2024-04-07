@@ -33,8 +33,11 @@ const  { title ="default" } = Astro.props;
 
 <style>
 body {
+    display: flex;
+    flex-direction: column;
     background-color: #f8f8f8;
     font-family: 'Roboto', sans-serif;
+     min-height: 100vh;
 }
 
 .main {
@@ -42,10 +45,35 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
+    height: 100%;
     padding: 20px;
     margin-left: 100px;
+
 }
+@media (max-width: 600px) {
+        .main {
+            margin-left: 0px;
+            height: 100%;
+
+            
+        }}
+        @media (max-width: 768px) {
+        .main {
+            margin-left: 0px;
+            
+
+            
+        }}
+        @media (max-width: 1024px) {
+        .main {
+            margin-left: 0px;
+            
+
+            
+        }}
+        
+
+
 
 .profile-image {
     width: 200px;
@@ -53,7 +81,7 @@ body {
     border-radius: 40%;
     object-fit: cover;
     margin-bottom: 20px;
-    box-shadow: #333 0px 0px 10px;
+    box-shadow: #8a8888 0px 0px 10px;
 }
 
 .content {
