@@ -1,4 +1,6 @@
 ---
+
+
 const projects = [
     { title: "PLantBuddy", description: "Your go-to guide for all things plant-related", image: "/images/plantbuddy.png", link:"https://plantbuddy.vercel.app/"},
     {title : "Bowen Massage", description: "A website for a massage therapist", image: "/images/bowen.png", link:"https://www.gesundheitspraxis-jaekel.de/"},
@@ -18,6 +20,7 @@ const projects = [
                     
                         <img src={project.image} alt={project.title} width="200"  height="200"/>
                 <h2>{project.title}</h2>
+                
                 <a href={project.link}>
                     <img src="/svg/link.svg" class="link"/>  
                     </a>
@@ -36,6 +39,7 @@ const projects = [
     div {
         background-color: rgb(220, 203, 198);
         padding: 20px;
+        margin: 0;
     }
     h1 {   
         text-align: center;
@@ -49,10 +53,37 @@ const projects = [
 
     .project-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
+    gap: 20px;
     
+    
+    
+    
+   
+   
     
 }
+@media (max-width: 600px) {
+        .project-container {
+            flex-direction: column;
+           justify-content: center;
+            gap : 20px;
+            
+        }
+       
+    }
+     @media (max-width: 768px) { /* Styles for tablet devices go here */
+        .project-container {
+            flex-direction: column;
+            gap : 20px;
+        }
+}
+
+
+
+ 
+
 .link {
     width: 20px;
     height: 20px;
@@ -76,8 +107,9 @@ const projects = [
         flex-direction: column;
         align-items: center;
       border-radius: 10px;
-        border: 0.5px solid black;
+    border: 1px solid #ccc;
         background-color: white;
+        box-shadow: 0cap 0px 15px 0px rgba(0,0,0,0.2);  
         
     
     }

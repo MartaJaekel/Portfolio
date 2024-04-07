@@ -8,7 +8,7 @@ const techStack = {
 
     <div>
         <h1>Tech Stack</h1>
-        <ul>
+        <ul class="list">
             {techStack.technologies.map((tech) => (
                 <li >{tech}</li>
             ))}
@@ -31,6 +31,23 @@ const techStack = {
             flex-direction: row;
             gap: 2rem;
         }
+        @media (max-width: 600px) {
+        .list{
+            display: flex;
+            flex-wrap: wrap;
+            overflow: auto;
+        }
+            
+        }
+        @media (max-width: 768px) {
+        .list{
+            display: flex;
+            flex-wrap: wrap;
+            overflow: auto;
+        }
+            
+        }
+
 
         li {
             background-color: #f3eeee;
