@@ -11,6 +11,7 @@ const projects = [
 ---
 
 <div>
+     
     <h1>Projects</h1>
     <div class="project-container" >
         
@@ -36,6 +37,16 @@ const projects = [
     </div>
 
 <style>
+     @keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
     div {
         background-color: rgb(220, 203, 198);
         padding: 20px;
@@ -110,6 +121,8 @@ const projects = [
     border: 1px solid #ccc;
         background-color: white;
         box-shadow: 0cap 0px 15px 0px rgba(0,0,0,0.2);  
+        animation: slideInFromLeft 1s ease-out;
+  animation-delay: calc(var(--i) * 1s);
         
     
     }
