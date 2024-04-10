@@ -16,7 +16,7 @@ const projects = [
     <div class="project-container" >
         
         {projects.map(project => (
-            <figure class="card-project">
+            <figure class="card-project" data-aos="slide-right" data-aos-duration="1000" >
                 
                     
                         <img src={project.image} alt={project.title} width="200"  height="200"/>
@@ -34,10 +34,12 @@ const projects = [
             </figure>
         ))}
     </div>
+    
     </div>
+   
 
 <style>
-     @keyframes slideInFromLeft {
+     /* @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
     opacity: 0;
@@ -46,7 +48,12 @@ const projects = [
     transform: translateX(0);
     opacity: 1;
   }
-}
+} */
+
+.aos-animate.card-project {
+      opacity: 1;
+      transition: opacity 1s;
+    }
     div {
         background-color: rgb(220, 203, 198);
         padding: 20px;
@@ -121,10 +128,10 @@ const projects = [
     border: 1px solid #ccc;
         background-color: white;
         box-shadow: 0cap 0px 15px 0px rgba(0,0,0,0.2);  
-        animation: slideInFromLeft 1s ease-out;
+        /* animation: slideInFromLeft 1s ease-out;
   animation-delay: calc(var(--i) * 1s);
         
-    
+     */
     }
     .card-project h2 {
         
@@ -140,3 +147,9 @@ const projects = [
         border-radius: 10px;
     }
 </style>
+ <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script  type="module"
+  src="/ao.js">
+     
+  
+</script>
