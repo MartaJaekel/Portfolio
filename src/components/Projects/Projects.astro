@@ -18,7 +18,7 @@ const projects = [
   {
     title: "Astrology App",
     description: "An astrology app that gives you your daily horoscope ",
-    image: "/images/horoscope.png",
+    image: "/images/horoscopes.png",
     link: "https://astro-gamma-kohl.vercel.app/",
     techstack: "HTML, CSS, JavaScript,React,Node.js,Next.js,Vercel,MongoDB",
   },
@@ -30,38 +30,52 @@ const projects = [
     <h1>Discover my latest projects</h1>
     <a id="show-projects"> <img src="/svg/arrow.svg" /></a>
   </div>
-  <div class="project-container">
-    {
-      projects.map((project) => (
-        <a href={project.link}>
-          <figure
-            class="card-project"
-            data-aos="slide-right"
-            data-aos-duration="1000"
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              width="200"
-              height="200"
-            />
-            <div class="section">
-              <h2>{project.title}</h2>
-            </div>
 
-            <figcaption>{project.description}</figcaption>
-            <section>{project.techstack}</section>
-          </figure>
-        </a>
-      ))
-    }
-  </div>
+  {
+    projects.map((project) => (
+      <div class="container">
+        <section class="project-container">
+          <h1>{project.title}</h1>
+          <div class="wrapper">
+            <a href={project.link}>
+              <img src={project.image} alt={project.title} />
+            </a>
+          </div>
+        </section>
+      </div>
+      // <a href={project.link}>
+      //   <figure
+      //     class="card-project"
+      //     data-aos="slide-right"
+      //     data-aos-duration="1000"
+      //   >
+      //     <img
+      //       src={project.image}
+      //       alt={project.title}
+      //       width="200"
+      //       height="200"
+      //     />
+      //     <div class="section">
+      //       <h2>{project.title}</h2>
+      //     </div>
+
+      //     <figcaption>{project.description}</figcaption>
+      //     <section>{project.techstack}</section>
+      //   </figure>
+      // </a>
+    ))
+  }
 </div>
 
 <style>
+  .container {
+    display: flex;
+    justify-content: center;
+  }
   .intro {
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
     img {
       width: 30px;
       height: 30px;
@@ -77,106 +91,43 @@ const projects = [
       letter-spacing: 7px;
       animation: vaweAnimation 1s infinite;
     }
-    a {
-      margin: auto;
-    }
+  }
+  a {
+    margin: auto;
+  }
+  .wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  section {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgb(220, 203, 198);
+    border-radius: 10px;
+    box-shadow: 0 0px 15px 0px rgba(0, 0, 0, 0.2);
   }
 
-  .aos-animate.card-project {
-    opacity: 1;
-    transition: opacity 1s;
-  }
   div {
     background-color: rgb(220, 203, 198);
-    padding: 20px;
-    margin: 0;
   }
-
-  @keyframes vaweAnimation {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(10px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-
-  .project-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 20px;
-    display: none;
-
-    a {
-      text-decoration: none;
-      color: black;
-    }
-  }
-  @media (max-width: 600px) {
-    .project-container {
-      flex-direction: column;
-      justify-content: center;
-      gap: 20px;
-    }
-  }
-  @media (max-width: 768px) {
-    /* Styles for tablet devices go here */
-    .project-container {
-      flex-direction: column;
-      gap: 20px;
-    }
-  }
-
-  .section {
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    margin-top: 10px;
-
-    text-decoration: underline;
-  }
-
-  .card-project figcaption {
+  h1 {
+    font-size: 1.3rem;
+    font-family: "Times New Roman", Times, serif;
+    letter-spacing: 7px;
     text-align: center;
-    padding: 10px;
-    max-width: 200px;
-    font-style: normal;
-    margin-bottom: 10px;
-  }
-  .card-project section {
-    display: flex;
-    flex-wrap: nowrap;
-    max-width: 275px;
-    text-align: center;
-    padding: 10px;
-    font-style: italic;
-  }
-  ul {
-    list-style-type: none;
-    gap: 20px;
-  }
-  .card-project {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    background-color: white;
-    box-shadow: 0cap 0px 15px 0px rgba(0, 0, 0, 0.2);
-  }
-  .card-project h2 {
-    padding: auto;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
   }
 
   img {
-    width: 300px;
-    height: 300px;
+    width: 600px;
+    height: 410px;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 0px 15px 0px rgba(0, 0, 0, 0.2); /* Add this line */
